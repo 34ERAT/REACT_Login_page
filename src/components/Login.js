@@ -16,16 +16,17 @@ function Login({post,setlogin}) {
           <label>Enter your password</label>
         </div>
         <div className="forget">
-          <label for="remember">
+          <label htmlFor="remember">
             <input type="checkbox" id="remember" />
             <p>Remember me</p>
           </label>
-          <a href="#">Forgot password?</a>
+          
+          <label>Forgot password?</label>
         </div>
         <button type="submit">Log In</button>
         <div className="register">
           <p>
-            Don't have an account? <lable onClick={()=>setlogin(false)} >Register</lable>
+            Don't have an account? <label onClick={()=>setlogin(false)} >Register</label>
           </p>
         </div>
       </form>

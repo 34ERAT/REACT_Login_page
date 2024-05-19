@@ -34,7 +34,7 @@ function SignUp({post,setlogin}) {
         <button type="submit">Log In</button>
         <div className="register">
           <p>
-            Don't have an account?  <lable onClick={()=>setlogin(true)} >Register</lable>
+            Don't have an account?  <label onClick={()=>setlogin(true)} >Register</label>
           </p>
         </div>
       </form>
