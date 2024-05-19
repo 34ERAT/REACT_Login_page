@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import "./App.css";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import React,{useState} from "react";
 
 function App() {
+  const [login,setLogin]=  useState(true)
+  const Post = async(url,data)=>{
+    try {
+      await axios.post(url,data)
+      alert("success")
+    } catch (err) {
+      console.error(err)
+      alert(" data was not send successfull")
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div className="wrapper">
+     
+      { login ? <Login post={Post} setlogin={setLogin}/> : <SignUp post={Post} setlogin={setLogin}/>}
+      
     </div>
   );
 }
